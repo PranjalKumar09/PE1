@@ -1,2 +1,4 @@
+*.log
 load_model/model.safetensors
 Notes.txt
+
