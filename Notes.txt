@@ -1,0 +1,114 @@
+make_model.py
+=============
+
+
+Normalization of audio (do_normalize: True) -> Normalize semi-structured JSON data into a flat table.
+Defining padding values and side (padding_side: 'right') -> With 'right' padding, the extra values (usually zeros or the specified padding_value) are added to the end of the input sequence to make it the required length.
+
+Sampling rate (16000 ).   16000 sample at second
+
+When return_attention_mask: False, the model does not return or use an attention mask, assuming the entire input (even with padding) should be processed equally.
+
+
+
+
+
+model_config = {
+    "activation_dropout": 0.0,
+    "apply_spec_augment": True,
+    "attention_dropout": 0.1,
+    "classifier_proj_size": 256,
+    "conv_dim": [512, 512, 512, 512, 512, 512, 512],
+    "conv_kernel": [10, 3, 3, 3, 3, 2, 2],
+    "conv_stride": [5, 2, 2, 2, 2, 2, 2],
+    "hidden_size": 768,
+    "num_attention_heads": 12,
+    "num_hidden_layers": 12,
+    "vocab_size": 32,
+    "output_hidden_size": 768,
+    "id2label": {"0": "fake", "1": "real"},
+    "label2id": {"fake": "0", "real": "1"},
+    "pad_token_id": 0,
+}
+
+
+apply_spec_augment: True
+    SpecAugment is a data augmentation technique applied on spectrograms (visual representations of audio). This enables better generalization by randomly masking sections of the spectrogram during training.
+
+
+1. Activation Dropout (activation_dropout)
+    Purpose: Dropout applied to the activation layers of the network.
+    Where it’s applied: This is generally applied to the outputs of feedforward layers (MLPs) or other non-attention layers. After applying an activation function (like ReLU or GELU), dropout randomly "deactivates" a fraction of the neurons in the hidden layers to prevent overfitting.
+    Effect: This helps the model generalize better by preventing any single neuron from becoming too dominant during training.
+    In your case: activation_dropout: 0.0 means no dropout is applied to the activation layers, implying the model keeps all neurons active during training.
+
+2. Attention Dropout (attention_dropout)
+    Purpose: Dropout applied to the attention mechanism in transformer models.
+    Where it’s applied: Specifically in the self-attention layers, where the model computes attention weights over different parts of the input sequence. Attention dropout randomly ignores some of these attention weights during training.
+    Effect: Helps reduce overfitting in the attention mechanism by making the model rely less on any single part of the input sequence. This is particularly useful in transformer-based models that use multiple attention heads.
+    In your case: attention_dropout: 0.1 means 10% of the attention weights are randomly set to zero during training to prevent overfitting in the attention layers.
+
+classifier_proj_size: 256   reduces the dimensions before the final classification.
+
+You have 7 convolutional layers, each with 512 filters. -> [512, 512, 512, 512, 512, 512, 512]
+
+conv_dim: [512, 512, 512, 512, 512, 512, 512]:    The number of channels (filters) for each of the convolutional layers. You have 7 convolutional layers, each with 512 filters.
+
+conv_kernel: [10, 3, 3, 3, 3, 2, 2]:    The size of the kernel (or filter) for each convolutional layer. These kernels determine the receptive field of each convolutional layer over the input.
+
+conv_stride: [5, 2, 2, 2, 2, 2, 2]:     The stride for each convolutional layer, which determines how much the filter moves during convolutions. Larger strides result in downsampling the input.
+
+hidden_size: 768  The size of the hidden layers in the model. This is a key parameter in transformer-based models, determining the size of internal representations.
+
+num_attention_heads: 12    The number of attention heads in each multi-head attention layer. More heads allow the model to focus on different parts of the input sequence simultaneously.
+
+num_hidden_layers: 12    The number of hidden layers in the transformer model. Deeper models tend to capture more complex features from the input.
+
+vocab_size: 32    The size of the output vocabulary. In your case, this seems to relate to the possible categories or tokens (could be limited to binary classification in your project).
+
+output_hidden_size: 768
+    The output size from the hidden layers before final classification.
+
+
+pad_token_id: 0
+    The token ID used for padding, set to 0, which matches your preprocessing step (padding with zeros).
+
+
+# Step 3: Define Training Arguments
+training_args = TrainingArguments(
+    output_dir="load_model",
+    evaluation_strategy="epoch",
+    per_device_train_batch_size=32,
+    per_device_eval_batch_size=32,
+    gradient_accumulation_steps=4,
+    learning_rate=3e-05,
+    num_train_epochs=5,
+    weight_decay=0.01,
+    logging_dir="./logs",
+    logging_steps=10,
+    save_steps=1000,
+    lr_scheduler_type="cosine",
+    warmup_ratio=0.1,
+    save_total_limit=2,
+    load_best_model_at_end=True
+)
+
+
+evaluation_strategy="epoch": The model will be evaluated at the end of every epoch. This is useful to check how well the model performs on validation data after each epoch
+
+per_device_train_batch_size=32:  (per_device_eval_batch_size is same)
+    Number of training examples processed per device (GPU/CPU) in one forward/backward pass. Since you have a gradient_accumulation_steps=4, the effective batch size is 32 x 4 = 128.
+
+learning_rate=3e-05,   controls how quickly or slowly the model updates its parameters. A value of 3e-05 (0.00003) is quite common for fine-tuning pre-trained models.
+
+save_steps=1000,     Model checkpoints will be saved every 1000 steps. This helps you recover the model from a recent point in case of interruption or if you want to stop training early
+
+
+warmup_ratio=0.1,    The proportion of training steps used for the learning rate warmup. This means the learning rate will increase linearly during the first 10% of training steps before starting to decay.
+
+save_total_limit=2
+    The total number of saved model checkpoints is limited to 2. Older checkpoints are deleted once newer ones are saved.
+
+load_best_model_at_end=True
+    After training, the best model (based on evaluation metrics) will be loaded. This ensures that you continue with the best-performing model at the end of Training
+
