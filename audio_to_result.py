@@ -31,7 +31,3 @@ if __name__ == "__main__":
     predicted_class, label = preprocess_and_classify_audio(file_path)
     print(f"Predicted class (number): {predicted_class}")
     print(f"Predicted label: {label}")
-""" 
-WARNING: The scripts f2py and numpy-config are installed in '/home/pranjal/.local/bin' which is not on PATH.
-Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
-"""
