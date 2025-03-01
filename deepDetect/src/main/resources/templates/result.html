@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::title}, ~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="/styles.css"> <!-- Optional: Link your CSS -->
+</head>
+<body>
+<section>
+
+<div class="container">
+    <div class="result-section">
+        <h1>Detection Result</h1>
+
+        <!-- Display error message if exists -->
+        <p th:if="${error}" class="error-message" th:text="${error}"></p>
+
+        <!-- Display the result message -->
+        <p th:if="${result}" class="result-message">
+            This content is <strong th:text="${result}"></strong>.
+        </p>
+
+        <!-- Try Again Button -->
+        <a href="/" class="btn btn-primary">Try Again</a>
+    </div>
+</div>
+</section>
+</body>
+</html>

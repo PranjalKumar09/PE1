@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::title}, ~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>About Page</title>
+</head>
+<body>
+<section>
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <h2>About the Project</h2>
+                <p>
+                    Welcome to our project on fake detection! Our solution identifies whether content across
+                    various formats—text, images, audio, or video—is AI-generated or human-created. This project
+                    was developed for <strong>Project Exhibition 1</strong> by a team of five dedicated members
+                    from <strong>VIT Bhopal University</strong>. We are 2nd-year B.Tech students specializing
+                    in <em>Computer Science and Engineering (AI & ML)</em>.
+                </p>
+            </div>
+            <div class="col-lg-6 mb-4">
+<!--                <img src="https://via.placeholder.com/600x400" alt="AI Detection Illustration" class="img-fluid rounded">-->
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3>Technical Details</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-brain icon me-2"></i>
+                        <strong>Machine Learning:</strong> Implemented different models for classification.
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-wave-square icon me-2"></i>
+                        <strong>Audio Analysis:</strong> Using <code>Wav2Vec2.0</code>.
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-font icon me-2"></i>
+                        <strong>Text Analysis:</strong> Logistic Regression.
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-image icon me-2"></i>
+                        <strong>Image Processing:</strong> Specialized ML models.
+                    </li>
+                    <li class="list-group-item">
+                        <i class="fa-solid fa-database icon me-2"></i>
+                        <strong>Backend:</strong> Spring Boot REST APIs with MySQL database.
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 future-tech">
+                <h3>Future Goals</h3>
+                <p>
+                    We aim to expand the project to include video content analysis and enhance its scalability
+                    using containerization tools like Docker and Kubernetes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Team</h2>
+            <div class="row text-center">
+                <div class="col-md-3 team-member">
+<!--                    <img src="https://via.placeholder.com/120" alt="Team Member" class="mb-2">-->
+                    <h5>Pranjal Kumar Shukla</h5>
+                </div>
+                <div class="col-md-2 team-member">
+<!--                    <img src="https://via.placeholder.com/120" alt="Team Member" class="mb-2">-->
+                    <h5>Rishi Singh</h5>
+                </div>
+                <div class="col-md-2 team-member">
+<!--                    <img src="https://via.placeholder.com/120" alt="Team Member" class="mb-2">-->
+                    <h5>Akshat </h5>
+                </div>
+                <div class="col-md-2 team-member">
+<!--                    <img src="https://via.placeholder.com/120" alt="Team Member" class="mb-2">-->
+                    <h5>Hardik Pandya</h5>
+                </div>
+                <div class="col-md-2 team-member">
+                    <!--                    <img src="https://via.placeholder.com/120" alt="Team Member" class="mb-2">-->
+                    <h5>Mayank</h5>
+                </div>
+            </div>
+            <div class="row text-center mt-4">
+                <div class="col-md-12">
+                    <h5>Supervisor: <strong>Geeta Singh Mam</strong></h5>
+                    <h5>Reviewer: <strong>Siddharth Singh Chouchan Sir</strong></h5>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::Layout(~{::title}, ~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Index Page</title>
+</head>
+<body>
+<section>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/img/header2.png" class="d-block w-100" alt="..." height="500" width="100%">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/header1.png"   class="d-block w-100" alt="..." height="500" width="100%">
+            </div>
+            <div class="carousel-item">
+                <img src="/img/header3.png" class="d-block w-100" alt="..." height="500" width="100%">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+
+
+    <section class="hero bg-dark text-white text-center py-5">
+        <h1>Detect Fake and AI-Generated Content with Cutting-Edge Technology</h1>
+        <p class="lead">With the rise of deepfakes and AI-generated content, distinguishing real from fake media across text, images, video, and audio has become crucial.</p>
+        <a href="/upload" class="btn btn-warning btn-lg">Start Detecting Now</a>
+    </section>
+
+    <section class="challenge py-5">
+        <div class="container">
+            <h2 class="mb-4">The Global Challenge of Deepfakes</h2>
+            <p class="lead">In recent years, the proliferation of highly realistic but fake content across various media formats, such as deepfakes in video, has become a critical global challenge. Fake news, counterfeit visuals, and impersonated voices are now threatening the integrity of digital communication.</p>
+            <p><strong>AI-generated fake news has increased by 1000%, and 75% of Indians have viewed deepfake content in the last 12 months (McAfee Survey).</strong></p>
+        </div>
+    </section>
+
+    <section class="what-is py-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">What is a Deepfake?</h2>
+            <p>Deepfakes are AI-generated or manipulated media files (audio, video, text, or image) that are designed to deceive viewers into believing that the content is authentic. These AI models can make it nearly impossible for humans to distinguish real content from manipulated or synthetic media.</p>
+            <ul>
+                <li><strong>Politics:</strong> Deepfakes have been used to impersonate high-profile political figures, leading to confusion and unrest.</li>
+                <li><strong>Media:</strong> Fake news and counterfeit visuals threaten the credibility of journalism and social media.</li>
+                <li><strong>Cryptocurrency:</strong> AI-generated content can be used to manipulate markets and create financial fraud.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="importance py-5">
+        <div class="container">
+            <h2 class="mb-4">Why Detection is Critical</h2>
+            <p class="lead">As AI-generated content becomes increasingly indistinguishable from authentic media, trust in digital platforms, journalism, and social media is eroded. There is an urgent need for comprehensive detection systems capable of analyzing text, images, videos, and audio.</p>
+            <p><strong>Human detection of deepfake images averages just 62% accuracy, while AI-driven systems achieve much higher rates of success in identifying fakes.</strong></p>
+        </div>
+    </section>
+
+    <section class="features py-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">Key Features of Our Detection System</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fas fa-image fa-3x mb-3"></i>
+                    <h4>Multi-format Detection</h4>
+                    <p>Detect AI-generated content in text, audio, images, and videos.</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fas fa-check-circle fa-3x mb-3"></i>
+                    <h4>High Accuracy</h4>
+                    <p>Get accurate results with AI-driven analysis, faster than human detection methods.</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fas fa-users fa-3x mb-3"></i>
+                    <h4>User-Friendly</h4>
+                    <p>Simple, intuitive interface to upload content and receive results.</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="fas fa-shield-alt fa-3x mb-3"></i>
+                    <h4>Privacy & Security</h4>
+                    <p>Your uploaded content is processed securely and not stored longer than necessary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="how-it-works py-5">
+        <div class="container text-center">
+            <h2>How It Works</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <i class="fas fa-upload fa-3x mb-3"></i>
+                    <h4>Upload Content</h4>
+                    <p>Choose any media format: image, audio, video, or text.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-cogs fa-3x mb-3"></i>
+                    <h4>AI Analysis</h4>
+                    <p>Our AI examines the content and provides a detailed analysis.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-check-circle fa-3x mb-3"></i>
+                    <h4>Results</h4>
+                    <p>Receive an accurate determination of whether your content is real or AI-generated.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</section>
+</body>
+</html>

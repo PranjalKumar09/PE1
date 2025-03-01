@@ -65,38 +65,5 @@ def organize_files(source_dir):
 for folder in data_folders[:-1]:  # Exclude KAGGLE/AUDIO for now
     organize_files(folder)
 
-# Handle KAGGLE/AUDIO separately
-def organize_kaggle_audio(source_dir):
-    real_dir = os.path.join(source_dir, 'REAL')
-    fake_dir = os.path.join(source_dir, 'FAKE')
-
-    if os.path.exists(real_dir):
-        real_files = [os.path.join(real_dir, f) for f in os.listdir(real_dir) if f.endswith('.wav')]
-    else:
-        real_files = []
-
-    if os.path.exists(fake_dir):
-        fake_files = [os.path.join(fake_dir, f) for f in os.listdir(fake_dir) if f.endswith('.wav')]
-    else:
-        fake_files = []
-
-    # Randomly split into training and testing (80-20 split)
-    
-    real_train, real_test = train_test_split(real_files, test_size=0.2, random_state=42)
-    fake_train, fake_test = train_test_split(fake_files, test_size=0.2, random_state=42)
-
-    # Move files
-    for f in real_train:
-        shutil.move(f, train_real_dir)
-    for f in real_test:
-        shutil.move(f, test_real_dir)
-
-    for f in fake_train:
-        shutil.move(f, train_fake_dir)
-    for f in fake_test:
-        shutil.move(f, test_fake_dir)
-
-# Organize KAGGLE/AUDIO separately
-organize_kaggle_audio('KAGGLE/AUDIO')
 
 print("Data organized into unified train/test/validation splits successfully!")

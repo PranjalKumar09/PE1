@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e2cf6c2-f68d-4bf0-a2fb-b76d633c7564" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/java/com/deepdetect/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/static/img/header1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/static/img/header2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/static/img/header3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/static/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/templates/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/templates/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/templates/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/templates/insight.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/templates/result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/deepDetect/src/main/resources/templates/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arrange_data_properly.py" beforeDir="false" afterPath="$PROJECT_DIR$/arrange_data_properly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audio_to_result.py" beforeDir="false" afterPath="$PROJECT_DIR$/audio_to_result.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2qRnBybQwj5tHLQI8eed3jww4av" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/media/pranjal/New Volume/CODES/Public/PE",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e2cf6c2-f68d-4bf0-a2fb-b76d633c7564" name="Changes" comment="" />
+      <created>1734634123336</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734634123336</updated>
+      <workItem from="1734634124559" duration="25000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

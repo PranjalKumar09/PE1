@@ -31,3 +31,13 @@ if __name__ == "__main__":
     predicted_class, label = preprocess_and_classify_audio(file_path)
     print(f"Predicted class (number): {predicted_class}")
     print(f"Predicted label: {label}")
+
+
+"""
+
+
+
+"""
+
+
+
